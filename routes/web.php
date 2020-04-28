@@ -20,3 +20,5 @@ $router->post("/login","AuthController@Login");
 $router->post("/register", "AuthController@register");
 $router->post("/login", "AuthController@login");
 $router->get("/user", "UserController@index");
+$router->get("/vendor/search", "VendorController@Index");
+$router->get("/vendor/search/{nama_vendor}", "VendorController@Search");

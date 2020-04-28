@@ -19,7 +19,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 // $router->get('/', function () use ($router) {
 //     return $router->app->version();
 // });
- 
+
 $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
@@ -48,6 +48,7 @@ $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class
 );
+
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +85,8 @@ $app->routeMiddleware([
 
 $app->register(App\Providers\AppServiceProvider::class);
 $app->register(App\Providers\AuthServiceProvider::class);
+$app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
+
 // $app->register(App\Providers\EventServiceProvider::class);
 
 /*
