@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TableUser extends Migration
+class CreateVendorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class TableUser extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
+        Schema::create('vendor', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email');
-            $table->string('password');
-            $table->string('token')->nullable();
+            $table->string('nama_vendor');
+            $table->string('alamat_vendor');
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('user');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class TableUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('vendor');
     }
 }
