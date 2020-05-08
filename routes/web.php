@@ -15,6 +15,10 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->get('/key',function(){
+    return str_random(32);
+});
+
 $router->post("/register", "AuthController@Register");
 $router->post("/login","AuthController@Login");
 $router->post("/register", "AuthController@register");
@@ -22,3 +26,6 @@ $router->post("/login", "AuthController@login");
 $router->get("/user", "UserController@index");
 $router->get("/vendor/search", "VendorController@Index");
 $router->get("/vendor/search/{nama_vendor}", "VendorController@Search");
+$router->get('/quantitySize', 'quantitySizeController@index');
+$router->get('/quantitySize/{id_baju}', 'quantitySizeController@show');
+$router->post('/quantitySize', 'quantitySizeController@store');
