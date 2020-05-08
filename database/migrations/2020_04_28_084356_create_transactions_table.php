@@ -14,6 +14,7 @@ class CreateTransactionsTable extends Migration
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
+
             $table->increments('id_transaction');
             $table->string('update_pesanan');
             $table->integer('id_baju')->unsigned();
@@ -23,7 +24,6 @@ class CreateTransactionsTable extends Migration
             $table->integer('quantity_l');
             $table->integer('quantity_xl');
             $table->integer('quantity_xxl');
-            // $table->foreign('id_baju')->references('id_baju')->on('bajus');
             $table->foreign('id_user')->references('id_user')->on('user'); 
         });
     }
