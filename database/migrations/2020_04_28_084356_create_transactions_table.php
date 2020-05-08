@@ -14,14 +14,17 @@ class CreateTransactionsTable extends Migration
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
-            //$table->string('update_pesanan',);
-            //$table->integer('id_baju')->unsigned();
+            $table->increments('id_transaction');
+            $table->string('update_pesanan');
+            $table->integer('id_baju')->unsigned();
+            $table->integer('id_user')->unsigned();
             $table->integer('quantity_s');
             $table->integer('quantity_m');
             $table->integer('quantity_l');
             $table->integer('quantity_xl');
             $table->integer('quantity_xxl');
-            //$table->foreign('id_baju')->references('id_baju')->on('bajus'); 
+            // $table->foreign('id_baju')->references('id_baju')->on('bajus');
+            $table->foreign('id_user')->references('id_user')->on('user'); 
         });
     }
 
