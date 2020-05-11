@@ -24,6 +24,13 @@ $router->post("/login","AuthController@Login");
 $router->post("/register", "AuthController@register");
 $router->post("/login", "AuthController@login");
 $router->get("/user", "UserController@index");
+
 $router->get('/quantitySize', 'quantitySizeController@index');
 $router->get('/quantitySize/{id_baju}', 'quantitySizeController@show');
 $router->post('/quantitySize', 'quantitySizeController@store');
+
+$router->get('/articles', 'articlesController@index');
+$router->get('/articles/{id_artikel}', 'articlesController@show');
+$router->post('/articles', 'articlesController@store');
+$router->put('/articles/{id_artikel}', 'articlesController@update');
+$router->delete('/articles/{id_artikel}', 'articlesController@destroy');
