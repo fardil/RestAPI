@@ -18,8 +18,6 @@ class CreateHistoriesTable extends Migration
             $table->integer('id_vendor')->unsigned();
             $table->integer('id_transaction')->unsigned();
             $table->string('review_pesanan');
-            $table->foreign('id_vendor')->references('id_vendor')->on('vendor');
-            $table->foreign('id_transaction')->references('id_transaction')->on('transactions');
             $table->timestamps();
         });
     }
