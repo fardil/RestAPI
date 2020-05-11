@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVendorTable extends Migration
+class CreateVendorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateVendorTable extends Migration
      */
     public function up()
     {
-        Schema::create('vendor', function (Blueprint $table) {
+        Schema::create('vendors', function (Blueprint $table) {
             $table->increments('id_vendor');
             $table->string('nama_vendor');
             $table->string('alamat_vendor');
             $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id_user')->on('user');
         });
     }
 
@@ -29,6 +28,6 @@ class CreateVendorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vendor');
+        Schema::dropIfExists('vendors');
     }
 }

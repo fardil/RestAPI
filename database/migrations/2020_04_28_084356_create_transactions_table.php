@@ -23,8 +23,6 @@ class CreateTransactionsTable extends Migration
             $table->integer('quantity_l');
             $table->integer('quantity_xl');
             $table->integer('quantity_xxl');
-            // $table->foreign('id_baju')->references('id_baju')->on('bajus');
-            $table->foreign('id_user')->references('id_user')->on('user'); 
         });
     }
 

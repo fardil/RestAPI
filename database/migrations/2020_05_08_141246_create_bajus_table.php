@@ -16,10 +16,8 @@ class CreateBajusTable extends Migration
         Schema::create('bajus', function (Blueprint $table) {
             $table->increments('id_baju');
             $table->string('jenis_baju');
-            $table->integer('id_vendor')->unsigned();
             $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id_user')->on('user');
-            $table->foreign('id_vendor')->references('id_vendor')->on('vendor');
+            $table->integer('id_vendor')->unsigned();
         });
     }
 
