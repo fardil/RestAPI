@@ -29,4 +29,16 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password',
     ];
+
+    public function baju(){
+        return $this->hasOne('baju::class');
+    }
+    
+    public function transaction(){
+        return $this->hasOne('transaction::class');
+    } 
+
+    public function vendor(){
+        return $this->hasOne('vendor::class');
+    } 
 }
