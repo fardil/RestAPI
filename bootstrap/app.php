@@ -85,9 +85,13 @@ $app->routeMiddleware([
 
 $app->register(App\Providers\AppServiceProvider::class);
 $app->register(App\Providers\AuthServiceProvider::class);
+<<<<<<< HEAD
+$app->register(App\Providers\EventServiceProvider::class);
+=======
 $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 
 // $app->register(App\Providers\EventServiceProvider::class);
+>>>>>>> 2984771e99a66c7656c283e80ab1e65321a67b5b
 
 /*
 |--------------------------------------------------------------------------
