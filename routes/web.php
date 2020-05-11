@@ -24,7 +24,12 @@ $router->post("/login","AuthController@Login");
 $router->post("/register", "AuthController@register");
 $router->post("/login", "AuthController@login");
 $router->get("/user", "UserController@index");
+<<<<<<< HEAD
 
+=======
+$router->get("/vendor/search", "VendorController@Index");
+$router->get("/vendor/search/{nama_vendor}", "VendorController@Search");
+>>>>>>> 2984771e99a66c7656c283e80ab1e65321a67b5b
 $router->get('/quantitySize', 'quantitySizeController@index');
 $router->get('/quantitySize/{id_baju}', 'quantitySizeController@show');
 $router->post('/quantitySize', 'quantitySizeController@store');

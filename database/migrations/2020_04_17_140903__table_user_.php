@@ -13,8 +13,8 @@ class TableUser extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('user', function (Blueprint $table) {
+            $table->increments('id_user');
             $table->string('email');
             $table->string('password');
             $table->string('token')->nullable();
@@ -29,6 +29,6 @@ class TableUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('user');
     }
 }
