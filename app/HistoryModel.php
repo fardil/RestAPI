@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class History extends Model
+class HistoryModel extends Model
 {
     protected $table = 'histories';
-    
+    protected $primaryKey = 'id_history';
+    public $timestamps = false;
+
     public function vendor(){
         return $this->belongsTo('class::vendor');
     }

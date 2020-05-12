@@ -3,22 +3,39 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Vendor;
+use App\VendorModel;
 
 class VendorController extends Controller
 {
     public function index(){
-        $vendor = Vendor::all();
+        $vendors = VendorModel::all();
         return response()->json([
             'msg' => 'success',
-            'vendor' => $vendor
-        ]),20);
+            'vendors' => $vendors
+        ]);
     }
 
     public function search($vendor){
-        $vendor = Vendor::where('nama_vendor','like',"%{$nama_vendor}"->get());
+        $vendors = VendorModel::where('nama_vendor','like',"%{$nama_vendor}",get());
         return response()->json([
-            'vendor' => $vendor;
+            'vendors' => $vendors
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        $data = new VendorModel();
+        $data->nama_vendor = $request -> input('nama_vendor');
+        $data->alamat_vendor = $request -> input('alamat_vendor');
+        $data->no_telp_vendor = $request -> input('no_telp_vendor');
+        $data->save();
+
+        return response('Vendor is added');
+    }
+
+    public function show($id_vendor)
+    {
+        $data = VendorModel::where('id_vendor',$id_vendor)->get();
+        return response ($data);
     }
 }

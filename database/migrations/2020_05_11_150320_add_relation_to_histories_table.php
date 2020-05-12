@@ -31,27 +31,27 @@ class AddRelationToHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropForeign('transactions_id_transaction_foreign');
+        Schema::table('histories', function (Blueprint $table) {
+            $table->dropForeign('histories_id_transaction_foreign');
         });
 
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropIndex('transactions_id_transaction_foreign');
+        Schema::table('histories', function (Blueprint $table) {
+            $table->dropIndex('histories_id_transaction_foreign');
         });
         
-        Schema::table('transactions', function (Blueprint $table) {
+        Schema::table('histories', function (Blueprint $table) {
             $table->integer('id_transaction')->change();
         });
 
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropForeign('transactions_id_vendor_foreign');
+        Schema::table('histories', function (Blueprint $table) {
+            $table->dropForeign('histories_id_vendor_foreign');
         });
 
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropIndex('transactions_id_vendor_foreign');
+        Schema::table('histories', function (Blueprint $table) {
+            $table->dropIndex('histories_id_vendor_foreign');
         });
         
-        Schema::table('transactions', function (Blueprint $table) {
+        Schema::table('histories', function (Blueprint $table) {
             $table->integer('id_vendor')->change();
         });
     }

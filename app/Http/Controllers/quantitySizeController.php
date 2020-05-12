@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\quantitySizeModel;
+use App\Transactions;
 
 class quantitySizeController extends Controller
 {
     public function index(){
-        $data = quantitySizeModel::all();
+        $data = Transactions::all();
         return response($data);
     }
     public function show($id_baju){
-        $data = quantitySizeModel::where('id_baju',$id_baju)->get();
+        $data = Transactions::where('id_transaction',$id_transaction)->get();
         return response ($data);
     }
     public function store (Request $request){
-        $data = new quantitySizeModel();
+        $data = new Transactions();
         $data->quantity_s = $request->input('quantity_s');
         $data->quantity_m = $request->input('quantity_m');
         $data->quantity_l = $request->input('quantity_l');

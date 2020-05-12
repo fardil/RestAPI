@@ -15,7 +15,7 @@ class AddRelationToVendorsTable extends Migration
     {
         Schema::table('vendors', function (Blueprint $table) {
             $table->integer('id_user')->unsigned()->change();
-            $table->foreign('id_user')->references('id_user')->on('users')
+            $table->foreign('id_user')->references('id_user')->on('user')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
     }
@@ -27,15 +27,15 @@ class AddRelationToVendorsTable extends Migration
      */
     public function down()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropForeign('transactions_id_user_foreign');
+        Schema::table('vendors', function (Blueprint $table) {
+            $table->dropForeign('vendors_id_user_foreign');
         });
 
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropIndex('transactions_id_user_foreign');
+        Schema::table('vendors', function (Blueprint $table) {
+            $table->dropIndex('vendors_id_user_foreign');
         });
         
-        Schema::table('transactions', function (Blueprint $table) {
+        Schema::table('vendors', function (Blueprint $table) {
             $table->integer('id_user')->change();
         });
     }

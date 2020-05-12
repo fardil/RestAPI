@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Baju extends Model
+class BajuModel extends Model
 {
     protected $table = 'bajus';
-
+    protected $primaryKey = 'id_baju';
+    public $timestamps = false;
+    
     public function transaction(){
         return $this->hasOne('transaction::class');
     }

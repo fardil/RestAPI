@@ -15,11 +15,11 @@ class AddRelationToBajusTable extends Migration
     {
         Schema::table('bajus', function (Blueprint $table) {
             $table->integer('id_user')->unsigned()->change();
-            $table->foreign('id_user')->references('id_user')->on('users')
+            $table->foreign('id_user')->references('id_user')->on('user')
                 ->onUpdate('cascade')->onDelete('cascade');
 
             $table->integer('id_vendor')->unsigned()->change();
-            $table->foreign('id_vendor')->references('id_vendor')->on('vendor')
+            $table->foreign('id_vendor')->references('id_vendor')->on('vendors')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
     }
@@ -31,28 +31,28 @@ class AddRelationToBajusTable extends Migration
      */
     public function down()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropForeign('transactions_id_user_foreign');
+        Schema::table('bajus', function (Blueprint $table) {
+            $table->dropForeign('bajus_id_user_foreign');
         });
 
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropIndex('transactions_id_user_foreign');
+        Schema::table('bajus', function (Blueprint $table) {
+            $table->dropIndex('bajus_id_user_foreign');
         });
         
-        Schema::table('transactions', function (Blueprint $table) {
+        Schema::table('bajus', function (Blueprint $table) {
             $table->integer('id_user')->change();
         });
 
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropForeign('transactions_id_vendor_foreign');
+        Schema::table('bajus', function (Blueprint $table) {
+            $table->dropForeign('bajus_id_vendor_foreign');
         });
 
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropIndex('transactions_id_vendor_foreign');
+        Schema::table('bajus', function (Blueprint $table) {
+            $table->dropIndex('bajus_id_vendor_foreign');
         });
         
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->integer('id_vendor')->change();
+        Schema::table('bajus', function (Blueprint $table) {
+             $table->integer('id_vendor')->change();
         });
     }
 }
