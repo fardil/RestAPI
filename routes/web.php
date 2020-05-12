@@ -19,23 +19,27 @@ $router->get('/key',function(){
     return str_random(32);
 });
 
-$router->post("/register", "AuthController@Register");
-$router->post("/login","AuthController@Login");
-$router->post("/register", "AuthController@register");
-$router->post("/login", "AuthController@login");
-$router->get("/user", "UserController@index");
-<<<<<<< HEAD
-
-=======
-$router->get("/vendor/search", "VendorController@Index");
-$router->get("/vendor/search/{nama_vendor}", "VendorController@Search");
->>>>>>> 2984771e99a66c7656c283e80ab1e65321a67b5b
-$router->get('/quantitySize', 'quantitySizeController@index');
-$router->get('/quantitySize/{id_baju}', 'quantitySizeController@show');
-$router->post('/quantitySize', 'quantitySizeController@store');
-
+$router->post('/register', 'AuthController@Register');
+$router->post('/login','AuthController@Login');
+$router->get('/user', 'UserController@index');
+$router->get('/vendors','VendorController@Index');
+$router->get('/vendors/search/{nama_vendor}', 'VendorController@Search');
+$router->get('/vendors{id_vendor}','VendorController@show');
+$router->post('/vendors','VendorController@store');
+$router->get('/Transactions', 'quantitySizeController@index');
+$router->get('/Transactions/{id_transaction}', 'quantitySizeController@show');
+$router->post('/Transactions', 'quantitySizeController@store');
 $router->get('/articles', 'articlesController@index');
 $router->get('/articles/{id_artikel}', 'articlesController@show');
 $router->post('/articles', 'articlesController@store');
 $router->put('/articles/{id_artikel}', 'articlesController@update');
 $router->delete('/articles/{id_artikel}', 'articlesController@destroy');
+$router->get('/histories','HistoryController@index');
+$router->get('/histories{id_history}','HistoryController@show');
+$router->post('/histories','HistoryController@store');
+$router->get('/histories','HistoryController@index');
+$router->get('/histories{id_history}','HistoryController@show');
+$router->post('/histories','HistoryController@store');
+$router->get('/bajus','BajuController@index');
+$router->get('/bajus{id_baju}','BajuController@show');
+$router->post('/bajus','BajuController@store');

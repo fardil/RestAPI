@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\UserModel;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
@@ -45,7 +45,7 @@ class AuthController extends Controller
         $email = $request -> input('email');
         $password = $request -> input('password');
 
-        $user = User::where('email',$email)->first();
+        $user = UserModel::where('email',$email)->first();
 
         if(!$user){
             $out = [
