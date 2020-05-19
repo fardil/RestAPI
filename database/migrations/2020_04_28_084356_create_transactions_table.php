@@ -24,7 +24,6 @@ class CreateTransactionsTable extends Migration
             $table->integer('quantity_l');
             $table->integer('quantity_xl');
             $table->integer('quantity_xxl');
-
         });
     }
 

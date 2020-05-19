@@ -18,7 +18,7 @@ class CreateVendorsTable extends Migration
             $table->string('nama_vendor');
             $table->string('alamat_vendor');
             $table->string('no_telp_vendor');
-            $table->integer('id_user')->unsigned();
+            $table->integer('id_user')->nullable();
         });
     }
 

@@ -14,7 +14,8 @@ class BajuController extends Controller
      */
     public function index()
     {
-        //
+        $data = BajuModel::all();
+        return response($data);
     }
 
     /**
