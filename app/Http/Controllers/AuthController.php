@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function register (Request $request){
         $this->validate($request,[
-            'email' => 'required|unique:users|max:255',
+            'email' => 'required|unique:user|max:255',
             'password' => 'required|min:8'
         ]);
         $email = $request->input('email');
@@ -23,7 +23,7 @@ class AuthController extends Controller
             'password' => $hashPwd
         ];
 
-        if(User::create($data)){
+        if(UserModel::create($data)){
             $out = [
                 'message' => 'register_success',
                 'code' => 201,
@@ -50,12 +50,14 @@ class AuthController extends Controller
         if(!$user){
             $out = [
                 'message' => 'login_failed',
-                'code' => 404,
+                'code' => 401,
                 'result' => [
                     'token' => null,
                 ]
             ];
+            return response()->json($out, $out['code']);
         }
+
         if(Hash::check($password, $user->password)){
             $newtoken = $this->generateRandomString();
 
@@ -81,7 +83,7 @@ class AuthController extends Controller
         }
         return response() -> json($out,$out['code']);
     }
-    function generateRandomString($length = 80){
+    function generateRandomString($length = 15){
         $karakter="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         $panjang_karakter=strlen($karakter);
         $str='';
