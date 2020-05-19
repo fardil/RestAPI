@@ -1,0 +1,46 @@
+Scenario test API
+
+(Positive and negative tests)
+ 
+1. Register
+   - Input email : sukses 
+   - Input password < 8 karakter : gagal
+   - Input password > 8 karakter : sukses
+
+2. Login
+   - input email sesuai data di register : sukses
+   - input email tidak sesuai data di register : gagal
+   - input password sesuai data di register : sukses
+   - input password tidak sesuai data di register : gagal
+
+3. Vendor
+   - input nama vendor :sukses
+   - input alamat vendor :sukses 
+   - input no telp vendor :sukses
+   - menampilkan data vendor : sukses
+   - menampilkan data tertentu berdasarkan nama : sukses
+
+4. Transaction
+   - input update pesanan : sukses
+   - input quantity s : sukses
+   - input quantity m : sukses
+   - input quantity l : sukses
+   - input quantity xl : sukses
+   - input quantity xxl : sukses
+
+5. Baju
+   - input jenis baju : sukses
+   - menampilkan data tabel baju berdasarkan id : sukses
+
+6. History
+   - input review pesanan : sukses
+   - menampilkan data tertentu berdasarkan id : sukses
+ 
+7. Artikel
+   - input judul artikel : sukses
+   - input tema artikel : sukses
+   - input isi artikel : sukses
+   - update artikel berdasarkan id : sukses
+   - hapus artikel berdasarkan id : sukses
+
+   

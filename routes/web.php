@@ -28,9 +28,9 @@ $router->get('/vendors/search/{nama_vendor}', 'VendorController@Search');
 $router->get('/vendors{id_vendor}','VendorController@show');
 $router->post('/vendors','VendorController@store');
 
-$router->get('/Transactions', 'quantitySizeController@index');
-$router->get('/Transactions/{id_transaction}', 'quantitySizeController@show');
-$router->post('/Transactions', 'quantitySizeController@store');
+$router->get('/transactions', 'TransactionController@index');
+$router->get('/transactions/{id_transaction}', 'TransactionController@show');
+$router->post('/transactions', 'TransactionController@store');
 
 $router->get('/articles', 'articlesController@index');
 $router->get('/articles/{id_artikel}', 'articlesController@show');
