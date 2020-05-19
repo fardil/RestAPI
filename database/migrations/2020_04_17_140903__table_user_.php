@@ -17,6 +17,7 @@ class TableUser extends Migration
             $table->increments('id_user');
             $table->string('email');
             $table->string('password');
+            $table->integer('no_telp');
             $table->string('token')->nullable();
             $table->timestamps();
         });
