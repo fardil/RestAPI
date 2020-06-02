@@ -18,3 +18,6 @@ git clone https://github.com/fardil/SkripsiFinder.git
 ```bash
 php artisan server --host 0.0.0.0
 ```
+## Testing
+Information about testing APIs can be found in `/resources/API test scenario.txt
+`  
